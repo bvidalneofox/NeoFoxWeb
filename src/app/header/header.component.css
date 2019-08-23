@@ -1,0 +1,19 @@
+.main-header {
+    position: relative;
+    background: url(../../assets/img/header.jpeg);
+    background-size: cover;
+    min-height: 450px;
+}
+
+.background-overlay {
+    position: absolute;
+    background: rgba(48, 51, 107, .7);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.btn {
+    border-radius: 0;
+}

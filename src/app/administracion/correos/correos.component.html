@@ -1,0 +1,54 @@
+<!--Tabla-->
+<section id="mensajes">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-header">
+            <h4>Bandeja de mensajes</h4>
+          </div>
+          <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th>Nombre</th>
+                <th>Fecha</th>
+                <th>Revisado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let mensaje of mensajes; let i = index">
+                <td>{{mensaje.nombre}}</td>
+                <td>{{mensaje.fecha}}</td>
+                <td>
+                  <a routerLink="../leer/{{mensaje.id}}" class="btn btn-secondary" activated>
+                    <i class="fas fa-envelope"></i> Leer
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--Tarjetas de la derecha-->
+      <div class="col-md-3">
+        <div class="card text-center bg-danger text-white mb-3">
+          <div class="card-body">
+            <h3>Mensajes leidos</h3>
+            <h4 class="display-4">
+              1
+            </h4>
+          </div>
+        </div>
+
+        <div class="card text-center bg-success text-white mb-3">
+          <div class="card-body">
+            <h3>Mensajes sin leer</h3>
+            <h4 class="display-4">
+              1
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

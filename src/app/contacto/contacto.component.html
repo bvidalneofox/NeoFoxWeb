@@ -1,0 +1,127 @@
+<section class="bg-light py-5" id="contacto">
+  <div class="container">
+    <div class="row">
+      <div class="col-9">
+        <h3>Contáctenos</h3>
+        <p>Si desea contactarnos puede rellenar el formulario a continuacion y le escribiremos lo antes posible.</p>
+
+        <form #f="ngForm" (ngSubmit)="recibirCorreo(f)">
+
+          <div class="form-group">
+            <label for="">Ingrese su nombre:</label>
+            <input 
+            type="text" 
+            name="nombre" 
+            #nombre="ngModel"
+            [(ngModel)]="mensaje.nombre"
+            [ngClass]="{'is-invalid': nombre.errors && nombre.touched}"  
+            placeholder="Ingrese su nombre" 
+            class="form-control"
+            required
+            maxlength="100"
+            minlength="2">
+            <div [hidden]="!nombre.errors?.required" class="invalid-feedback">
+              Nombre requerido
+            </div>
+            <div [hidden]="!nombre.errors?.minlength" class="invalid-feedback">
+              El nombre debe de contener minimo 2 caracteres
+            </div>
+          </div>
+
+          <div class="form-group">
+              <label for="">Ingrese su direccion de correo:</label>
+              <input 
+              type="text" 
+              name="email" 
+              #email="ngModel"
+              [(ngModel)]="mensaje.email"
+              [ngClass]="{'is-invalid': email.errors && email.touched}"  
+              placeholder="Ingrese su correo" 
+              class="form-control" 
+              required
+              maxlength="100"
+              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w)*(\.\w{2,3})+$">
+              <div [hidden]="!email.errors?.required" class="invalid-feedback">
+                Dirección de correo requerida
+              </div>
+              <div [hidden]="!email.errors?.pattern" class="invalid-feedback">
+                La dirección de correo ingresada no es valida
+              </div>
+              <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo con terceros.</small>
+          </div>
+
+          <div class="form-group">
+              <label for="textArea">Ingrese su mensaje:</label>
+              <textarea 
+              class="form-control" 
+              name="escrito"
+              #escrito="ngModel"
+              [(ngModel)]="mensaje.escrito"
+              [ngClass]="{'is-invalid': escrito.errors && escrito.touched}"
+              rows="6" 
+              placeholder="Ingrese su mensaje"
+              minlength="10"
+              maxlength="5000"
+              required>
+              </textarea>
+              <div [hidden]="!escrito.errors?.required" class="invalid-feedback">
+                Debe de escribir un mensaje
+              </div>
+              <div [hidden]="!escrito.errors?.minlength" class="invalid-feedback">
+                El mensaje debe de contener minimo 10 caracteres
+              </div>
+          </div>
+          <flash-messages></flash-messages>
+          <button type="submit" class="btn btn-danger btn-lg btn-block" style="cursor: pointer">Enviar Correo</button>
+          <button [hidden]="true" #abrirModal data-toggle="modal" data-target="#contactoExitoso"></button>
+        </form>
+      </div>
+      <div class="col-3 align-self-center">
+        <img src="assets/img/email.png" alt="imagen de correo" class="img-fluid d-none mt-5 d-sm-block" style="width: 100%">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Modal de contacto exitoso-->
+<div class="modal fade" id="contactoExitoso">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header text-white">
+        <h5 class="col-12 text-center">¡Gracias por confiar en NeoFox {{mensaje.nombre}}!
+          <button class="close" data-dismiss="modal" #botonCerrar>
+            <span>&times;</span>
+          </button>
+        </h5>
+      </div>
+      <div class="container">
+      <div class="modal-body">
+        <p>Nos contactaremos con usted lo antes posible, si lo desea puede visitar nuestras redes sociales para estar en contacto</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-4 py-2">
+          <a href="https://www.facebook.com/NeoFoxInformatica" target="_blank">
+            <img src="assets/img/facebook.png" alt="vinculo a facebook" class="img-fluid rounded-circle w-50">
+          </a>
+          <h5>Facebook</h5>
+        </div>
+        <div class="col-4 py-2">
+          <a href="https://twitter.com/NeoFoxTIC" target="_blank">
+            <img src="assets/img/twitter.png" alt="vinculo a twitter" class="img-fluid rounded-circle w-50">
+          </a>
+          <h5>Twitter</h5>
+        </div>
+        <div class="col-4 py-2">
+          <a href="" target="_blank">
+            <img src="assets/img/instagram.png" alt="vinculo a instagram" class="img-fluid rounded-circle w-50">
+          </a>
+          <h5>Instagram</h5>
+        </div>
+      </div>
+    </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger btn-block">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
