@@ -24,6 +24,8 @@ import { AdministradorwebComponent } from './administradorweb/administradorweb.c
 import { LeermensajeComponent } from './administracion/leermensaje/leermensaje.component';
 import { IniciowebComponent } from './inicioweb/inicioweb.component';
 import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
+import { PortafolioProyectosComponent } from './portafolio-proyectos/portafolio-proyectos.component';
+import { RedesSocialesComponent } from './redes-sociales/redes-sociales.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
     AdministradorwebComponent,
     LeermensajeComponent,
     IniciowebComponent,
-    NoEncontradoComponent
+    NoEncontradoComponent,
+    PortafolioProyectosComponent,
+    RedesSocialesComponent
   ],
   imports: [
     BrowserModule,
