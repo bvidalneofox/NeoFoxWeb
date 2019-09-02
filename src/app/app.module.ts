@@ -26,6 +26,7 @@ import { IniciowebComponent } from './inicioweb/inicioweb.component';
 import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { PortafolioProyectosComponent } from './portafolio-proyectos/portafolio-proyectos.component';
 import { RedesSocialesComponent } from './redes-sociales/redes-sociales.component';
+import { ServiciosWebComponent } from './servicios-web/servicios-web.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { RedesSocialesComponent } from './redes-sociales/redes-sociales.componen
     IniciowebComponent,
     NoEncontradoComponent,
     PortafolioProyectosComponent,
-    RedesSocialesComponent
+    RedesSocialesComponent,
+    ServiciosWebComponent
   ],
   imports: [
     BrowserModule,
