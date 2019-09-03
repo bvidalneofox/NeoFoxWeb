@@ -27,6 +27,7 @@ import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { PortafolioProyectosComponent } from './portafolio-proyectos/portafolio-proyectos.component';
 import { RedesSocialesComponent } from './redes-sociales/redes-sociales.component';
 import { ServiciosWebComponent } from './servicios-web/servicios-web.component';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ServiciosWebComponent } from './servicios-web/servicios-web.component';
     NoEncontradoComponent,
     PortafolioProyectosComponent,
     RedesSocialesComponent,
-    ServiciosWebComponent
+    ServiciosWebComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
